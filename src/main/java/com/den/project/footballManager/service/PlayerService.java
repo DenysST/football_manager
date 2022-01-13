@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface PlayerService {
     FootballPlayer getPlayer(Long id);
+    List<FootballPlayer> getPlayersByTeamId(Long id);
 }

@@ -10,4 +10,5 @@ import java.util.List;
 
 @Repository
 public interface FootballTeamRepository extends JpaRepository<FootballTeam, Long> {
+    FootballTeam findFootballTeamByFootballPlayer(FootballPlayer footballPlayer);
 }

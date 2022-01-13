@@ -19,7 +19,19 @@ public class TeamServiceImpl implements TeamService {
         return footballTeamRepository.findAll();
     }
 
+    @Override
     public FootballTeam getById(Long teamId) {
         return footballTeamRepository.getById(teamId);
     }
+
+    @Override
+    public FootballTeam getByPlayer(FootballPlayer footballPlayer) {
+        return footballTeamRepository.findFootballTeamByFootballPlayer(footballPlayer);
+    }
+
+    @Override
+    public FootballTeam saveTeam(FootballTeam footballTeam) {
+        return footballTeamRepository.save(footballTeam);
+    }
+
 }

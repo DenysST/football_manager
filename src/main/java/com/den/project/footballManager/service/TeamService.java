@@ -7,4 +7,7 @@ import java.util.List;
 
 public interface TeamService {
     List<FootballTeam> getAll();
+    FootballTeam getById(Long teamId);
+    FootballTeam getByPlayer(FootballPlayer footballPlayer);
+    FootballTeam saveTeam(FootballTeam footballTeam);
 }
