@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class TransferRequestDto {
-    private long playerId;
-    private long teamId;
-    private double commission;
+    private Long playerId;
+    private Long teamId;
+    private Double commission;
 }

@@ -23,7 +23,7 @@ public class PlayerTransferImpl implements PlayerTransfer {
         FootballPlayer currentPlayer = playerService.getPlayer(dto.getPlayerId());
         FootballTeam currentPlayerTeam = teamService.getByPlayer(currentPlayer);
         FootballTeam newPlayerTeam = teamService.getById(dto.getTeamId());
-        double transferPrice = (double) currentPlayer.getExperience() * 100000 / currentPlayer.getAge();
+        double transferPrice = (double) currentPlayer.getExperience() * 1000 / currentPlayer.getAge();
         double priceWithCommission = transferPrice + (transferPrice * dto.getCommission());
         if (newPlayerTeam.getMoneyBalance() >= priceWithCommission) {
             newPlayerTeam.setMoneyBalance(newPlayerTeam.getMoneyBalance() - priceWithCommission);
@@ -32,6 +32,8 @@ public class PlayerTransferImpl implements PlayerTransfer {
             newPlayerTeam.getFootballPlayer().add(currentPlayer);
             teamService.saveTeam(currentPlayerTeam);
             teamService.saveTeam(newPlayerTeam);
+            return true;
+
         }
         throw new TeamBalanceException("Team doesn't have anouth money");
     }

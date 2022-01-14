@@ -29,9 +29,9 @@ public class InjectData {
         FootballPlayer Test4 = footballPlayerRepository
                 .save(new FootballPlayer(null, "test4", "test4", 30, 100));
 
-        footballTeamRepository.save(new FootballTeam(null, "Barsa", 1000000000,
+        footballTeamRepository.save(new FootballTeam(null, "Barsa", 100000,
                 List.of(Messi, Test1, Test2)));
-        footballTeamRepository.save(new FootballTeam(null, "Real", 1000000000,
+        footballTeamRepository.save(new FootballTeam(null, "Real", 100000,
                 List.of(Ronaldo, Test3, Test4)));
 
     }
